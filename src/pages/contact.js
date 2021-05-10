@@ -1,19 +1,14 @@
 import React from "react"
-import Navbar from "../components/Navbar/Navbar"
-import Footer from "../components/Footer/Footer"
+import Layout from "../components/Layout/Layout"
 
 const Contact = () => {
   return (
-    <div>
-      <Navbar />
-      <div className="AppContainer">
-        <h1>Contact Me!</h1>
-        <main>
-          <p>Contact me via smoke signal</p>
-        </main>
-      </div>
-      <Footer />
-    </div>
+    <Layout>
+      <h1>Contact Me!</h1>
+      <main>
+        <p>Contact me via smoke signal</p>
+      </main>
+    </Layout>
   )
 }
 

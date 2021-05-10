@@ -1,17 +1,12 @@
 import React from "react"
-import Navbar from "../components/Navbar/Navbar"
-import Footer from "../components/Footer/Footer"
+import Layout from "../components/Layout/Layout"
 
 const BlogPage = () => {
   return (
-    <div>
-      <Navbar />
-      <div className="AppContainer">
-        <h1>Blog!</h1>
-        <p>Posts will be shown here!</p>
-      </div>
-      <Footer />
-    </div>
+    <Layout>
+      <h1>Blog!</h1>
+      <p>Posts will be shown here!</p>
+    </Layout>
   )
 }
 
