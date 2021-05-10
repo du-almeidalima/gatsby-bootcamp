@@ -9,4 +9,26 @@ module.exports = {
   plugins: [
     'gatsby-plugin-sass'
   ],
+  siteMetadata: {
+    author: 'Eduardo Lima',
+    github: 'https://github.com/du-almeidalima',
+    menuLinks: [
+      {
+        "name": "Eduardo Gatsby Bootcamp",
+        "link": "/"
+      },
+      {
+        "name": "Blog",
+        "link": "/blog"
+      },
+      {
+        "name": "Contact",
+        "link": "/contact"
+      },
+      {
+        "name": "About",
+        "link": "/about"
+      }
+    ]
+  }
 }
