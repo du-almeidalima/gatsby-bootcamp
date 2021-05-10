@@ -1,0 +1,42 @@
+$primary: #993251;
+$text-color: #F5F5DCFF;
+$text-color-hover: white;
+
+.AppNavbar {
+  height: 5rem;
+  padding: 0 2rem;
+  font-family: "Trebuchet MS", sans-serif;
+  width: 100vw;
+  background-color: $primary;
+  color: $text-color;
+
+  & ul {
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+  }
+
+  & li {
+    display: inline-block;
+    list-style: none;
+  }
+
+  & li:first-child {
+    margin-right: auto;
+  }
+
+  & li a {
+    display: inline-block;
+    font-size: 2rem;
+    font-weight: bold;
+    color: $text-color;
+    text-decoration: none;
+    height: 100%;
+    line-height: 5rem;
+  }
+
+  & li a:hover {
+    color: $text-color-hover;
+  }
+}
