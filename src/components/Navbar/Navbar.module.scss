@@ -1,5 +1,6 @@
 $primary: #993251;
 $text-color: #F5F5DCFF;
+$text-color-active: #f7bc84;
 $text-color-hover: white;
 
 .AppNavbar {
@@ -38,5 +39,9 @@ $text-color-hover: white;
 
   & li a:hover {
     color: $text-color-hover;
+  }
+
+  & li a.active {
+    color: $text-color-active;
   }
 }

@@ -6,10 +6,10 @@ const Navbar = () => {
   return (
     <nav className={styles.AppNavbar}>
       <ul>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/blog">Blog</Link></li>
-        <li><Link to="/contact">Contact</Link></li>
-        <li><Link to="/about">About</Link></li>
+        <li><Link activeClassName={styles.active} to="/">Eduardo Gatsby</Link></li>
+        <li><Link activeClassName={styles.active} to="/blog">Blog</Link></li>
+        <li><Link activeClassName={styles.active} to="/contact">Contact</Link></li>
+        <li><Link activeClassName={styles.active} to="/about">About</Link></li>
       </ul>
     </nav>
   )
