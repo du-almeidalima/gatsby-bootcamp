@@ -20,7 +20,7 @@ const Navbar = () => {
     <nav className={styles.AppNavbar}>
       <ul>
         {data.site.siteMetadata.menuLinks.map(ml => (
-          <li>
+          <li key={ml.name}>
             <Link activeClassName={styles.active} to={ml.link}>{ml.name}</Link>
           </li>
         ))}
