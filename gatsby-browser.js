@@ -1,4 +1,4 @@
-require('./src/styles/global.css')
+require('./src/styles/global.scss')
 
 exports.onRouteUpdate = ({location, prevLocation}) => {
   console.log("new pathname", location.pathname)

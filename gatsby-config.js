@@ -7,7 +7,15 @@
 module.exports = {
   /* Your site config here */
   plugins: [
-    'gatsby-plugin-sass'
+    'gatsby-plugin-sass',
+    'gatsby-transformer-remark',
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `resources`,
+        path: `${__dirname}/static/resources`,
+      },
+    },
   ],
   siteMetadata: {
     author: 'Eduardo Lima',

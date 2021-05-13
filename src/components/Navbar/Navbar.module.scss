@@ -6,7 +6,6 @@ $text-color-hover: white;
 .AppNavbar {
   height: 5rem;
   padding: 0 2rem;
-  font-family: "Trebuchet MS", sans-serif;
   width: 100vw;
   background-color: $primary;
   color: $text-color;
@@ -29,7 +28,7 @@ $text-color-hover: white;
 
   & li a {
     display: inline-block;
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: bold;
     color: $text-color;
     text-decoration: none;
