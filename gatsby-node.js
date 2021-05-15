@@ -23,7 +23,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
   // 1. Get Path to Template
-  const blogPostTemplate = path.resolve(`src/templates/BlogPostTemplate.jsx`)
+  const blogPostTemplate = path.resolve(`src/templates/BlogPostTemplate/BlogPostTemplate.jsx`)
 
   // 2. Get MD Data to Create Pages
   // Query for markdown nodes to use in creating pages.

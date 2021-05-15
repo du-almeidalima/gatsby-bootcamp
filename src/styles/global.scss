@@ -1,7 +1,13 @@
+@use 'src/components/Footer/Footer.module';
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
 }
 
 html {
@@ -9,8 +15,14 @@ html {
   color: #555555;
 }
 
-body, html {
-  min-height: 100vh;
+body {
+  position: relative;
+}
+
+body::after {
+  content: '';
+  display: block;
+  height: Footer.$footer-height;
 }
 
 .AppContainer {

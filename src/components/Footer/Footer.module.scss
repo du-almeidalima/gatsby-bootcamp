@@ -1,4 +1,7 @@
+$footer-height: 10vh;
+
 .AppFooter {
+  height: $footer-height;
   position: absolute;
   bottom: 0;
   left: 0;
