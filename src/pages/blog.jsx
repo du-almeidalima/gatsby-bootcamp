@@ -5,33 +5,29 @@ import Post from "../components/Post/Post"
 
 const BlogPage = () => {
   const data = useStaticQuery(graphql`
-      query PostMarkdownQuery {
-          allMarkdownRemark {
-              edges {
-                  node {
-                      frontmatter {
-                          title
-                          date
-                      }
-                      fields {
-                          slug
-                      }
-                      excerpt
-                  }
-              }
+    query {
+      allContentfulBlogPost(sort: { fields: publishedDate, order: DESC }) {
+        edges {
+          node {
+            title
+            publishedDate(formatString: "MMMM Do, YYYY")
+            slug
           }
+        }
       }
+    }
   `)
 
   return (
     <Layout>
       <h1 className="AppPageTitle">Welcome to an amazing Blog!</h1>
-      {data.allMarkdownRemark.edges.map(({ node }) => (
-        <Post key={node.frontmatter.title}
-              title={node.frontmatter.title}
-              date={node.frontmatter.date}
-              excerpt={node.excerpt}
-              slug={node.fields.slug}
+      {data.allContentfulBlogPost.edges.map(({ node }) => (
+        <Post
+          key={node.title}
+          title={node.title}
+          date={node.publishedDate}
+          excerpt={null}
+          slug={node.slug}
         />
       ))}
     </Layout>
