@@ -25,8 +25,7 @@ const BlogPage = () => {
 
   return (
     <Layout>
-      <h1>Welcome to an amazing Blog!</h1>
-      <div style={{ height: "50px" }} />
+      <h1 className="AppPageTitle">Welcome to an amazing Blog!</h1>
       {data.allMarkdownRemark.edges.map(({ node }) => (
         <Post key={node.frontmatter.title}
               title={node.frontmatter.title}

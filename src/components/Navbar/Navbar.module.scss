@@ -1,13 +1,12 @@
-$primary: #993251;
-$text-color: #F5F5DCFF;
-$text-color-active: #f7bc84;
-$text-color-hover: white;
+@use '/src/styles/theme.scss';
+
+$text-color: rgb(119, 119, 119);
 
 .AppNavbar {
   height: 5rem;
   padding: 0 2rem;
   width: 100%;
-  background-color: $primary;
+  box-shadow: 0 10px 10px 5px rgba(0, 0, 0, 0.1);
   color: $text-color;
 
   & ul {
@@ -37,10 +36,10 @@ $text-color-hover: white;
   }
 
   & li a:hover {
-    color: $text-color-hover;
+    color: rgba($color: theme.$primary, $alpha: .8);
   }
 
   & li a.active {
-    color: $text-color-active;
+    color: theme.$primary;
   }
 }

@@ -4,7 +4,7 @@ import Layout from "../components/Layout/Layout"
 const About = () => {
   return (
     <Layout>
-      <h1>This is the about page!</h1>
+      <h1 className="AppPageTitle">This is the about page!</h1>
       <a href="https://github.com/du-almeidalima" target="_blank" rel="noreferrer">Go to another dimension!</a>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo, quos!</p>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos doloribus ducimus harum, impedit maxime

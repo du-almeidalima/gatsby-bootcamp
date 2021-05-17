@@ -7,7 +7,7 @@ const IndexPage = () => {
     <div>
       <Navbar />
       <div className="AppContainer">
-        <h1>Gatsby Bootcamp</h1>
+        <h1 className="AppPageTitle">Gatsby Bootcamp</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, animi consequuntur dicta earum eos eum
           eveniet exercitationem fugiat illo incidunt laudantium libero minus molestiae molestias nam natus nihil nobis
           odio odit officia perferendis possimus qui quidem quo reiciendis rem saepe sed sint sunt tenetur ullam ut

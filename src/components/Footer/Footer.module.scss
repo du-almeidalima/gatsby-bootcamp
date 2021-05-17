@@ -1,12 +1,17 @@
+@use 'src/styles/theme';
+
 $footer-height: 10vh;
 
 .AppFooter {
-  height: $footer-height;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
   position: absolute;
   bottom: 0;
   left: 0;
-  padding: 2rem 2rem;
-  width: 100vw;
-  background-color: #b3b3b3;
-  color: white;
+  height: $footer-height;
+  width: 100%;
+  padding: 0.5rem 2rem;
+  color: rgb(63, 63, 63);
+  border-top: 1px solid rgba($color: theme.$primary, $alpha: 0.3);
 }
