@@ -6,47 +6,48 @@ import Layout from "../../components/Layout/Layout"
 import * as style from "./BlogPostTemplate.module.scss"
 
 // == UI Components ==
-const blogImage = ({ alt, src }) => {
-  return <img src={src} alt={alt}></img>
+const BlogImage = ({ alt, src }) => {
+  return <img src={src} alt={alt} />
 }
 
 export const query = graphql`
-  query($slug: String!) {
-    contentfulBlogPost(slug: { eq: $slug }) {
-      title
-      publishedDate(formatString: "MMMM Do, YYYY")
-      content {
-        raw
-        references {
-          ... on ContentfulAsset {
-            contentful_id
-            fluid(maxWidth: 1000) {
-              src
-              srcSet
+    query($slug: String!) {
+        contentfulBlogPost(slug: { eq: $slug }) {
+            title
+            publishedDate(formatString: "MMMM Do, YYYY")
+            content {
+                raw
+                references {
+                    __typename
+                    contentful_id
+                    title
+                    fluid(maxWidth: 1000) {
+                        src
+                        srcSet
+                    }
+                }
             }
-          }
         }
-      }
     }
-  }
 `
 
 /*
  * Due to the Rich Text Contentful data type, I needed to install an package,
- * @contentful/rich-text-react-renderer, in order to parse the json that comes from this field
+ * @contentful/rich-text-react-renderer and gatsby-source-contentful/rich-text
+ * in order to parse the json that comes from this field.
+ *
+ * Huge note on "__typename" from content.references! Without the "__typename"
+ * nothing goes to "node" when rendering an Image
  */
 
 const BlogPostTemplate = ({ data }) => {
   const options = {
     renderNode: {
-      [BLOCKS.EMBEDDED_ASSET]: node => {
-        return (
-          <pre>
-            <code>{JSON.stringify(node, null, 2)}</code>
-          </pre>
-        )
-      },
-    },
+      [BLOCKS.EMBEDDED_ASSET]: (node) => {
+        const { title, fluid: { src } } = node.data.target
+        return <BlogImage alt={title} src={src} />
+      }
+    }
   }
 
   return (
@@ -56,7 +57,7 @@ const BlogPostTemplate = ({ data }) => {
         <small className={style.date}>
           {data.contentfulBlogPost.publishedDate}
         </small>
-        {(data.contentfulBlogPost.content, options)}
+        {renderRichText(data.contentfulBlogPost.content, options)}
       </article>
     </Layout>
   )
