@@ -4,34 +4,27 @@ import { graphql } from "gatsby"
 import * as style from "./BlogPostTemplate.module.scss"
 
 export const query = graphql`
-    query (
-        $slug: String!
-    ) {
-        markdownRemark (
-            fields: {
-                slug: {
-                    eq: $slug
-                }
-            }
-        ) {
-            frontmatter {
-                title
-                date
-            }
-            html
-        }
+  query($slug: String!) {
+    contentfulBlogPost(slug: { eq: $slug }) {
+      title
+      publishedDate(formatString: "MMMM Do, YYYY")
     }
+  }
 `
 
 const BlogPostTemplate = ({ data }) => {
   return (
     <Layout>
       <article className={style.AppPost}>
-        <h1 className={style.title}>{data.markdownRemark.frontmatter.title}</h1>
-        <small className={style.date}>{data.markdownRemark.frontmatter.date}</small>
-        <div dangerouslySetInnerHTML={{
-          __html: data.markdownRemark.html
-        }} />
+        <h1 className={style.title}>{data.contentfulBlogPost.title}</h1>
+        <small className={style.date}>
+          {data.contentfulBlogPost.publishedDate}
+        </small>
+        <div
+          dangerouslySetInnerHTML={{
+            __html: null,
+          }}
+        />
       </article>
     </Layout>
   )
