@@ -9,6 +9,7 @@ module.exports = {
   plugins: [
     'gatsby-plugin-sass',
     'gatsby-transformer-remark',
+    'gatsby-plugin-react-helmet',
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -45,6 +46,7 @@ module.exports = {
   siteMetadata: {
     author: 'Eduardo Lima',
     github: 'https://github.com/du-almeidalima',
+    title: `Duardos's Gatsby Blog`,
     menuLinks: [
       {
         "name": "Eduardo Gatsby Bootcamp",

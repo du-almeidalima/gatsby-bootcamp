@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 import { renderRichText } from "gatsby-source-contentful/rich-text"
 import React from "react"
 import Layout from "../../components/Layout/Layout"
+import Head from "../../components/Head/Head"
 import * as style from "./BlogPostTemplate.module.scss"
 
 // == UI Components ==
@@ -52,6 +53,7 @@ const BlogPostTemplate = ({ data }) => {
 
   return (
     <Layout>
+      <Head pageTitle={data.contentfulBlogPost.title}/>
       <article className={style.AppPost}>
         <h1 className={style.title}>{data.contentfulBlogPost.title}</h1>
         <small className={style.date}>

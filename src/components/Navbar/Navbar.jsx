@@ -21,7 +21,13 @@ const Navbar = () => {
       <ul>
         {data.site.siteMetadata.menuLinks.map(ml => (
           <li key={ml.name}>
-            <Link activeClassName={styles.active} to={ml.link}>{ml.name}</Link>
+            <Link 
+              to={ml.link}
+              activeClassName={styles.active} 
+              partiallyActive={true}
+            >
+              {ml.name}
+            </Link>
           </li>
         ))}
       </ul>

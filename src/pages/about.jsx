@@ -1,9 +1,11 @@
 import React from "react"
+import Head from "../components/Head/Head"
 import Layout from "../components/Layout/Layout"
 
 const About = () => {
   return (
     <Layout>
+      <Head pageTitle="About"/>
       <h1 className="AppPageTitle">This is the about page!</h1>
       <a href="https://github.com/du-almeidalima" target="_blank" rel="noreferrer">Go to another dimension!</a>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo, quos!</p>

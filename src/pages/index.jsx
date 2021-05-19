@@ -1,11 +1,13 @@
 import React from "react"
 import Navbar from "../components/Navbar/Navbar"
 import Footer from "../components/Footer/Footer"
+import Head from "../components/Head/Head"
 
 const IndexPage = () => {
   return (
     <div>
       <Navbar />
+      <Head />
       <div className="AppContainer">
         <h1 className="AppPageTitle">Gatsby Bootcamp</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, animi consequuntur dicta earum eos eum
