@@ -23,7 +23,7 @@ body {
 body::after {
   content: '';
   display: block;
-  height: Footer.$footer-height;
+  height: calc(#{Footer.$footer-height} * 2);
 }
 
 .AppContainer {

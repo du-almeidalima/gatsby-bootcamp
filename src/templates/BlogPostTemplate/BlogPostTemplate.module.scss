@@ -9,9 +9,15 @@
     margin-bottom: 1rem;
   }
 
-  & :not(:is(.title, .date)) {
+  & :not(:is(.title, .date, .PostReferencesContainer *)) {
     margin: revert;
     padding: revert;
     max-width: 100%;
+  }
+
+  .PostReferencesContainer {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1rem;
   }
 }
